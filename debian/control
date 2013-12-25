@@ -1,12 +1,14 @@
 Source: ustr
 Section: libs
 Priority: optional
-Maintainer: Vaclav Ovsik <vaclav.ovsik@i.cz>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Vaclav Ovsik <vaclav.ovsik@i.cz>
 Build-Depends: debhelper (>= 5), cdbs, quilt
 Standards-Version: 3.8.3
 Homepage: http://www.and.org/ustr/
 Vcs-Git: git://git.debian.org/~zito-guest/pkg-ustr.git
 Vcs-Browser: http://git.debian.org/?p=users/zito-guest/pkg-ustr.git
+XS-Pexip-Upstream: http://archive.ubuntu.com/ubuntu/ precise
 
 Package: libustr-1.0-1
 Architecture: any
