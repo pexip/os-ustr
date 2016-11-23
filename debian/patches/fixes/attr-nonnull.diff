@@ -1,0 +1,28 @@
+From: Václav Ovsík <vaclav.ovsik@gmail.com>
+Subject: [PATCH] fixes/attr-nonnull
+
+This patch disables use of attribute nonnull. Attribute nonnull generates a lot
+of warnings (-Wnonnull-compare) and can cause problems see
+http://rachid.koucha.free.fr/tech_corner/nonnull_gcc_attribute.html
+
+Signed-off-by: Václav Ovsík <vaclav.ovsik@gmail.com>
+
+---
+ ustr-compiler.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ustr-compiler.h b/ustr-compiler.h
+index 9e71276..e6d8495 100644
+--- a/ustr-compiler.h
++++ b/ustr-compiler.h
+@@ -143,7 +143,7 @@
+ # define USTR__COMPILE_ATTR_FMT(x, y) /* nothing */
+ #endif
+ 
+-#if defined(__GNUC__) && !defined(__STRICT_ANSI__) && \
++#if 0   && defined(__GNUC__) && !defined(__STRICT_ANSI__) && \
+     USTR_CONF_HAVE_ATTR_NONNULL && USTR_CONF_COMPILE_USE_ATTRIBUTES
+ # define USTR__COMPILE_ATTR_NONNULL_A() \
+  __attribute__ ((__nonnull__))
+-- 
+tg: (b148fb7..) fixes/attr-nonnull (depends on: upstream)

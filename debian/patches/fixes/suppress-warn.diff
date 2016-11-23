@@ -1,0 +1,28 @@
+From: Václav Ovsík <vaclav.ovsik@gmail.com>
+Subject: [PATCH] fixes/suppress-warn
+
+Suppress warning (-Wmisleading-indentation)
+
+Signed-off-by: Václav Ovsík <vaclav.ovsik@gmail.com>
+
+---
+ ustr-cntl-code.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/ustr-cntl-code.h b/ustr-cntl-code.h
+index 93bc755..3132eb1 100644
+--- a/ustr-cntl-code.h
++++ b/ustr-cntl-code.h
+@@ -66,7 +66,10 @@ USTR_CONF_i_PROTO int   ustr__cntl_mc_setup_env2bool(const char *key, int def)
+   if (USTR__STREQ(ptr, "off")) return (USTR_FALSE);
+   if (USTR__STREQ(ptr, "no"))  return (USTR_FALSE);
+ 
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Wmisleading-indentation"
+                                return (!!def);
++#pragma GCC diagnostic pop
+ }
+ 
+ USTR_CONF_i_PROTO void  ustr__cntl_mc_setup_main(void)
+-- 
+tg: (b148fb7..) fixes/suppress-warn (depends on: upstream)

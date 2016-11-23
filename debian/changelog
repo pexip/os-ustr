@@ -1,3 +1,61 @@
+ustr (1.0.4-6) unstable; urgency=low
+
+  * Patch fixes/autoconf:
+    - Fixed race condition on creation shared library symbolic links when make
+      runs parallel. Thanks to Yann E. MORIN <yann.morin.1998@free.fr>.
+    - Fixed FTBFS (LDFLAGS with -pie): move LDFLAGS before -shared. Thanks to
+      Helmut Grohne <helmut@subdivi.de>.
+      Closes: #843459
+  * Patch fixes/man-spelling: added corrections.
+  * Added fixes/attr-nonnull: to disable nonnull attribute.
+  * Added fixes/suppress-warn: to suppress warning about indentation.
+  * Added hardening=+all in the debian/rules.
+  * Changed Vcs-Git to URL with https.
+  * Changed Standards-Version to 3.9.8.
+  * Added build-dependency on quilt and include /usr/share/quilt/quilt.make
+    in the debian/rules as suggested in /usr/share/topgit/tg2quilt.mk.
+  * Added dummy rule for /usr/share/topgit/tg2quilt.mk, because package not
+    build-depend on topgit and make tries to build this missing file using
+    implicit rule with dh producing spurious errors in log.
+  * For libustr-doc added Multi-Arch: foreign.
+
+ -- Vaclav Ovsik <vaclav.ovsik@i.cz>  Wed, 23 Nov 2016 20:59:34 +0100
+
+ustr (1.0.4-5) unstable; urgency=low
+
+  * Fixed transition from the doc directory to a symlink
+    /usr/share/doc/<PACKAGE> for libustr-1.0-1-dbg and libustr-dev
+    by added {libustr-1.0-1-dbg,libustr-dev}.maintscript.
+    Closes: #788169
+
+ -- Vaclav Ovsik <vaclav.ovsik@i.cz>  Tue, 09 Jun 2015 11:11:42 +0200
+
+ustr (1.0.4-4) unstable; urgency=low
+
+  * Added patch fixes/autoconf, to use GNU Autoconf instead of its own
+    auto-configuration driven by makefile rules. This is more general and
+    flexible and it supports cross-compilation.
+    Closes: #697698, #721352
+  * Removed patch debian/reentrant, -D_REENTRANT no longer required by policy
+  * Removed patch debian/locations, Debian locations are auto-configured now
+  * Added patch fixes/gnu-inline providing compatible with C99 inline
+    Closes: #777460
+  * Added patch fixes/stdarg-va_copy to suppress gcc-4.9 warning
+  * Added patch fixes/doc-html-local-css to replace link to remote CSS with
+    the local copy in the HTML documentation.
+  * Dropped ustr-import and corresponding sources, noticed in README.Debian
+  * Added alternate debian/control.wdbg to generate binary packages
+    suitable for debugging also (libustr-debug-1.0-1, libustr-debug-1.0-1-dbg
+    and libustr-debug-dev), noticed in README.Debian.
+  * Removed some unimportant files from /usr/share/doc/..., used links to
+    reduce duplicity between packages.
+  * Support Multi-Arch for development package (libustr-dev).
+  * Switch to dh from cdbs
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Changed Standards-Version to 3.9.6
+
+ -- Vaclav Ovsik <vaclav.ovsik@i.cz>  Thu, 12 Mar 2015 23:06:42 +0100
+
 ustr (1.0.4-3) unstable; urgency=low
 
   * Changed debian/watch, upstream ftp is no longer available
