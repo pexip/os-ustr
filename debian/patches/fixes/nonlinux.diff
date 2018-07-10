@@ -8,9 +8,9 @@ Solves the bug http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=536890
 Signed-off-by: Vaclav Ovsik <vaclav.ovsik@i.cz>
 
 ---
- T/ctst_11_io.c    |    4 ----
- T/ctst_3_medium.c |    2 --
- T/ctst_99_64bit.c |    4 ----
+ T/ctst_11_io.c    | 4 ----
+ T/ctst_3_medium.c | 2 --
+ T/ctst_99_64bit.c | 4 ----
  3 files changed, 10 deletions(-)
 
 diff --git a/T/ctst_11_io.c b/T/ctst_11_io.c

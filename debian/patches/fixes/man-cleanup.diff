@@ -6,8 +6,8 @@ The patch cleans up man pages (removes undefined macros).
 Signed-off-by: Vaclav Ovsik <vaclav.ovsik@i.cz>
 
 ---
- Documentation/txt2man.pl |   18 ++++++++++++------
- Documentation/ustr.3     |   19 -------------------
+ Documentation/txt2man.pl | 18 ++++++++++++------
+ Documentation/ustr.3     | 19 -------------------
  2 files changed, 12 insertions(+), 25 deletions(-)
 
 diff --git a/Documentation/txt2man.pl b/Documentation/txt2man.pl

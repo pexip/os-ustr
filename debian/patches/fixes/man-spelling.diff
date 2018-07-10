@@ -6,10 +6,10 @@ Fixes spelling errors found by lintian.
 Signed-off-by: Vaclav Ovsik <vaclav.ovsik@i.cz>
 
 ---
- Documentation/ustr-import.1 |    6 +++---
- Documentation/ustr.3        |   22 +++++++++++-----------
- Documentation/ustr_const.3  |    2 +-
- 3 files changed, 15 insertions(+), 15 deletions(-)
+ Documentation/ustr-import.1 |  6 +++---
+ Documentation/ustr.3        | 50 ++++++++++++++++++++++-----------------------
+ Documentation/ustr_const.3  |  4 ++--
+ 3 files changed, 30 insertions(+), 30 deletions(-)
 
 diff --git a/Documentation/ustr-import.1 b/Documentation/ustr-import.1
 index 153c48f..f8555ab 100644
@@ -36,9 +36,90 @@ index 153c48f..f8555ab 100644
  .TP
  \-d
 diff --git a/Documentation/ustr.3 b/Documentation/ustr.3
-index 88acab9..81675d6 100644
+index 88acab9..753e0b1 100644
 --- a/Documentation/ustr.3
 +++ b/Documentation/ustr.3
+@@ -1239,7 +1239,7 @@ void \fBustr_pool_clear\fR(struct Ustr_pool *);
+  A very simple overview is that you can use ustr_dup_cstr() to convert a C\-style
+ to a Ustr, and ustr_cstr() to convert it back. You can also use USTR1() to
+ create constant/read\-only strings, and USTR_SC_INIT_AUTO() to create strings
+-that use stack space upto a certain amount.
++that use stack space up to a certain amount.
+  Use is somewhat unique in that, by default, it has an average overhead of only
+ 55% overhead over strdup(), for strings in the range of 0 to 20 bytes. Or, to
+ put it another way it only uses 8 bytes to store a 2 byte string where
+@@ -1366,7 +1366,7 @@ Type\fB[3]\fR: const char[]
+ \fBExplanation:\fR
+ 
+ .br
+-  This function works in the same way as USTR1() but takes two length bytes, so the read\-only string can be upto 65,535 (2**16 \- 1) bytes in length.
++  This function works in the same way as USTR1() but takes two length bytes, so the read\-only string can be up to 65,535 (2**16 \- 1) bytes in length.
+ 
+ .ti -2
+ .br
+@@ -1405,7 +1405,7 @@ Type\fB[5]\fR: const char[]
+ \fBExplanation:\fR
+ 
+ .br
+-  This function works in the same way as USTR1() but takes four length bytes, so the read\-only string can be upto 2**32 \- 1 bytes in length.
++  This function works in the same way as USTR1() but takes four length bytes, so the read\-only string can be up to 2**32 \- 1 bytes in length.
+ 
+ .ti -2
+ .br
+@@ -2055,7 +2055,7 @@ Type\fB[1]\fR: Ustr *
+ \fBNote:\fR
+ 
+ .br
+-  Because of the layering between the Ustr code and the pool code, if you allocate an implicity sized Ustrp from a pool and then delete some data from it (which fails) the Ustr layer will think it has an implicit less than the actual size so this function will fail. This is what USTR_CNTL_MALLOC_CHECK_MEM_USTRP() is for.
++  Because of the layering between the Ustr code and the pool code, if you allocate an implicitly sized Ustrp from a pool and then delete some data from it (which fails) the Ustr layer will think it has an implicit less than the actual size so this function will fail. This is what USTR_CNTL_MALLOC_CHECK_MEM_USTRP() is for.
+ 
+ .ti -2
+ .br
+@@ -3357,7 +3357,7 @@ Type\fB[1]\fR: struct Ustr **
+ \fBNote:\fR
+ 
+ .br
+-  While the benifit is that you don't have to check for memory failure errors, if there is a memory failure and you have a non\-default configuration the configuration will revert back to the default.
++  While the benefit is that you don't have to check for memory failure errors, if there is a memory failure and you have a non\-default configuration the configuration will revert back to the default.
+ 
+ .SH Adding data to a Ustr
+ .ti -2
+@@ -3645,7 +3645,7 @@ Parameter\fB[1]\fR: Pointer to a pointer to a Ustr string
+ Type\fB[1]\fR: struct Ustr **
+ 
+ .br
+-Parameter\fB[2]\fR: Buffer containting data
++Parameter\fB[2]\fR: Buffer containing data
+ .br
+ Type\fB[2]\fR:  const void *
+ 
+@@ -5143,7 +5143,7 @@ Type\fB[1]\fR: const struct Ustr *
+ .br
+   This function says if the Ustr is current in read\-only storage.
+ .br
+-  Read\-only storage is not writable but can be referenced via. ustr_dup() an infinite amount of times.
++  Read\-only storage is not writable but can be referenced via. ustr_dup() an infinite number of times.
+ 
+ .ti -2
+ .br
+@@ -5407,7 +5407,7 @@ Type\fB[1]\fR: struct Ustr *
+ .br
+   This function sets the enomem flag, which can be observed via. the ustr_enomem() function.
+ .br
+-  The implication of setting this flag is that a memory error has occured in a previous function call on this Ustr.
++  The implication of setting this flag is that a memory error has occurred in a previous function call on this Ustr.
+ .sp
+ \fBNote:\fR
+ 
+@@ -5433,7 +5433,7 @@ Type\fB[1]\fR: struct Ustr *
+ .br
+   This function clears the enomem flag, which can be observed via. the ustr_enomem() function.
+ .br
+-  The implication of this flag being set is that a memory error has occured in a previous function call on this Ustr, so on clearing the flag you should know you have brought the Ustr back to a known state.
++  The implication of this flag being set is that a memory error has occurred in a previous function call on this Ustr, so on clearing the flag you should know you have brought the Ustr back to a known state.
+ .sp
+ \fBNote:\fR
+ 
 @@ -6556,7 +6556,7 @@ Type\fB[3]\fR: char
  \fBNote:\fR
  
@@ -117,6 +198,33 @@ index 88acab9..81675d6 100644
  
  .ti -2
  .br
+@@ -8658,7 +8658,7 @@ Parameter\fB[3]\fR: Length of substitution
+ Type\fB[3]\fR: size_t 
+ 
+ .br
+-Parameter\fB[4]\fR: Buffer containting substitute data
++Parameter\fB[4]\fR: Buffer containing substitute data
+ .br
+ Type\fB[4]\fR: const void *
+ 
+@@ -8872,7 +8872,7 @@ Parameter\fB[1]\fR: Pointer to a pointer to a Ustr (haystack)
+ Type\fB[1]\fR: struct Ustr **
+ 
+ .br
+-Parameter\fB[2]\fR: Buffer containting search data
++Parameter\fB[2]\fR: Buffer containing search data
+ .br
+ Type\fB[2]\fR: const void *
+ 
+@@ -8882,7 +8882,7 @@ Parameter\fB[3]\fR: Length of search buffer
+ Type\fB[3]\fR: size_t
+ 
+ .br
+-Parameter\fB[4]\fR: Buffer containting replacement data
++Parameter\fB[4]\fR: Buffer containing replacement data
+ .br
+ Type\fB[4]\fR: const void *
+ 
 @@ -10160,7 +10160,7 @@ Type\fB[3]\fR: size_t
  \fBExplanation:\fR
  
@@ -135,8 +243,26 @@ index 88acab9..81675d6 100644
  .sp
  \fBNote:\fR
  
+@@ -10561,7 +10561,7 @@ Parameter\fB[1]\fR: Optional value starting with USTR_CNTL_OPT_
+ Type\fB[1]\fR: int
+ 
+ .br
+-Parameter\fB[2]\fR: Arugments to option
++Parameter\fB[2]\fR: Arguments to option
+ .br
+ Type\fB[2]\fR: ...
+ 
+@@ -10608,7 +10608,7 @@ Type\fB[1]\fR: struct Ustr_pool *
+ \fBExplanation:\fR
+ 
+ .br
+-  This allocates a new pool as a child of the passed in pool (Parameter[1]), The pool can be freed and cleared independantly of the parent pool however free and clear operations on the parent pool are automatically applied to all child pools.
++  This allocates a new pool as a child of the passed in pool (Parameter[1]), The pool can be freed and cleared independently of the parent pool however free and clear operations on the parent pool are automatically applied to all child pools.
+ 
+ .ti -2
+ .br
 diff --git a/Documentation/ustr_const.3 b/Documentation/ustr_const.3
-index 18d6b8b..599c625 100644
+index 18d6b8b..dadc2fb 100644
 --- a/Documentation/ustr_const.3
 +++ b/Documentation/ustr_const.3
 @@ -393,7 +393,7 @@ ustr_const \- ustr string library constants
@@ -148,5 +274,14 @@ index 18d6b8b..599c625 100644
  
  .br
  \fBConstant: \fR USTR_FLAG_PARSE_NUM_OVERFLOW
+@@ -858,7 +858,7 @@ Type\fB[1]\fR: int
+ .br
+ \fBConstant: \fR USTR_CNTL_OPT_GET_FMT
+ .br
+-Parameter\fB[1]\fR: Pointer to colleciton of function pointers for system formating
++Parameter\fB[1]\fR: Pointer to colleciton of function pointers for system formatting
+ .br
+ Type\fB[1]\fR: struct Ustr_cntl_fmt *
+ 
 -- 
 tg: (09206e5..) fixes/man-spelling (depends on: fixes/man-cleanup)
