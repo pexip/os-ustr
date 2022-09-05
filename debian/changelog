@@ -1,3 +1,9 @@
+ustr (1.0.4-6pexip5) pexip-bullseye; urgency=medium
+
+  * Bullseye rebuild for ARM64 inclusion
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Mon, 05 Sep 2022 10:36:12 +0100
+
 ustr (1.0.4-6pexip4) pexip-bullseye; urgency=medium
 
   * Main bullseye build
